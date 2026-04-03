@@ -3,18 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CongoExplorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="module" defer></script>
 </head>
 <body>
+
+    <!-- Balise mère-->
     <div class="container">
-        <div class="logo">
 
+    <!-- Code HTML du HERO -->
+        <div class="hero">
+            <div class="hero-corps">
+                <div class="logo"></div>
+                <div class="title">Congo<span>Explorer</span></div>
+            </div>
+
+            <button class="btn-hero">Commencer</button>
         </div>
+    
+    <!-- Code HTML de la page de connexion -->
 
-        <div class="title">Congo<span>Explorer</span></div>
+        <form action="" class="login-form">
+            <h2>Page de Connexion</h2>
+            <div class="input">
+                <input type="text" placeholder="Nom..." id="login-input" required>
+                <i class="fa-solid fa-asterisk asterisk"></i>
+            </div>
+            
+            <div class="mail">
+                <input type="email" placeholder="Email..." id="login-email" required>
+                <i class="fa-solid fa-asterisk asterisk"></i>
+            </div>
+            <div class="password">
+                <input type="password" name="" id="login-password" placeholder="Mot de passe" required>
+                <i class="fa-solid fa-asterisk asterisk"></i>
+                <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <button id="btn-login">Se connecter</button>
+
+            <div class="switch">
+                <p>Vous n'avez pas de compte ?</p>
+                <a href="#" class="sub-link">S'inscrire</a>
+            </div>
+        </form>
+
+        
+
+    <!-- Code HTML de la page d'inscription -->
+
+        <form action="" class="sub-form">
+            <h2>Page d'inscription</h2>
+            <div class="input">
+                <input type="text" placeholder="Nom..." id="sub-input" required>
+                <i class="fa-solid fa-asterisk asterisk"></i>
+            </div>
+            
+            <div class="mail">
+                <input type="email" placeholder="Email..." id="sub-email" required>
+                <i class="fa-solid fa-asterisk asterisk"></i>
+            </div>
+            <div class="password">
+                <input type="password" name="" id="sub-password" placeholder="Mot de passe" required>
+                <i class="fa-solid fa-asterisk asterisk"></i>
+                <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <div class="password">
+                <input type="password" name="" id="sub-mdp" placeholder="Confirmation du mot de passe " required>
+                <i class="fa-solid fa-asterisk asterisk"></i>
+                <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <button id="btn-sub">S'inscrire</button>
+            <div>
+                <a href="#" class="home-link">Retour à l'accueil</a>
+            </div>
+
+        </form>
+
     </div>
-
-    <button>Commencer</button>
+    
 </body>
 </html>
