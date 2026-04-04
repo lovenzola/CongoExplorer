@@ -26,11 +26,12 @@
     <!-- Code HTML de la page de connexion -->
 
         <form action="" class="login-form">
-            <h2>Page de Connexion</h2>
-            <div class="input">
-                <input type="text" placeholder="Nom..." id="login-input" required>
-                <i class="fa-solid fa-asterisk asterisk"></i>
+            <div class="message">
+                <p class="content"></p>
+                <i class="fa-solid fa-close"></i>
             </div>
+
+            <h2>Page <span>de Connexion</span></h2>
             
             <div class="mail">
                 <input type="email" placeholder="Email..." id="login-email" required>
@@ -39,7 +40,7 @@
             <div class="password">
                 <input type="password" name="" id="login-password" placeholder="Mot de passe" required>
                 <i class="fa-solid fa-asterisk asterisk"></i>
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-solid fa-eye-slash"></i>
             </div>
 
             <button id="btn-login">Se connecter</button>
@@ -55,7 +56,11 @@
     <!-- Code HTML de la page d'inscription -->
 
         <form action="" class="sub-form">
-            <h2>Page d'inscription</h2>
+             <div class="message">
+                <p class="content"></p>
+                <i class="fa-solid fa-close"></i>
+            </div>
+            <h2>Page <span>d'inscription</span></h2>
             <div class="input">
                 <input type="text" placeholder="Nom..." id="sub-input" required>
                 <i class="fa-solid fa-asterisk asterisk"></i>
@@ -65,25 +70,38 @@
                 <input type="email" placeholder="Email..." id="sub-email" required>
                 <i class="fa-solid fa-asterisk asterisk"></i>
             </div>
-            <div class="password">
+            <div id="password">
                 <input type="password" name="" id="sub-password" placeholder="Mot de passe" required>
                 <i class="fa-solid fa-asterisk asterisk"></i>
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-solid fa-eye-slash"></i>
             </div>
 
             <div class="password">
                 <input type="password" name="" id="sub-mdp" placeholder="Confirmation du mot de passe " required>
                 <i class="fa-solid fa-asterisk asterisk"></i>
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-solid fa-eye-slash"></i>
             </div>
 
             <button id="btn-sub">S'inscrire</button>
-            <div>
-                <a href="#" class="home-link">Retour à l'accueil</a>
+            <div class="sub-rules">
+
+                <p>Votre mot de passe doit contenir :</p>
+                <li class="rule">Au moins 1 chiffre</li>
+                <li class="rule">Au moins 1 lettre miniscule</li>
+                <li class="rule">Au moins 1 lettre majuscule</li>
+                <li class="rule">Au moins 1 caractère spécial</li>
+                <li class="rule">Au moins 8 caractères</li>
             </div>
 
+            <div class="switch">
+                <a href="#" class="home-link"><i class="fa-solid fa-arrow-left"></i>Retour à l'accueil</a>
+                <a href="#" class="connexion-link">Se connecter</a>
+            </div>
+
+            
         </form>
 
+        
     </div>
     
 </body>
