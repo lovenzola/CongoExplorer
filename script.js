@@ -3,7 +3,7 @@
 
 Variables utiles ===================================================================================================*/
 
-const heroPage = document.querySelector('.hero')
+const heroPage = document.querySelector('#hero')
 const loginPage = document.querySelector('.login-form')
 const subPage = document.querySelector('.sub-form')
 
@@ -14,7 +14,7 @@ const connLink = document.querySelector('.connexion-link')
 
 // Fonction d'affichage d'une page
 
-function showPage(page){
+export function showPage(page){
 
     page.classList.remove('hide')
     page.classList.add("show")
@@ -22,7 +22,7 @@ function showPage(page){
 
 // Fonction pour cacher une page
 
-function hidePage(page){
+export function hidePage(page){
 
     page.classList.remove("show")
     page.classList.add("hide")
@@ -243,7 +243,7 @@ function clearInput(...inputs){
 }
 
 // Pour messages d'erreur
-function printErrorMessage(index,message){
+export function printErrorMessage(index,message){
 
     msgContent[index].textContent = message
     messages[index].classList.add('incorrect')
@@ -252,7 +252,7 @@ function printErrorMessage(index,message){
 }
 
 // Pour messages de succes
-function printSuccessMessage(index, message){
+export function printSuccessMessage(index, message){
 
     msgContent[index].textContent = message
     messages[index].classList.add('correct')
@@ -355,8 +355,11 @@ btnLogin.addEventListener(('click'), (e)=>{
         return
     }
 
-    clearInput(loginMail, loginPwd)
     printSuccessMessage(0, "Connexion réussie")
+    window.location.href = 'explorer.html#explo-container'
+
+    clearInput(loginMail, loginPwd)
+    
             
 })
 
