@@ -356,7 +356,7 @@ btnLogin.addEventListener(('click'), (e)=>{
     }
 
     printSuccessMessage(0, "Connexion réussie")
-    window.location.href = 'explorer.html#explo-container'
+    window.location.href = 'apropos.html#explo-container'
 
     clearInput(loginMail, loginPwd)
     

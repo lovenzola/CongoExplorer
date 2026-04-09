@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Fugaz+One&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: rgb(220, 210, 190);
+    --secondary-color: rgb(245, 245, 220);
+    --third-color: rgb(255, 255, 255);
+    --fourth-color: rgb(0, 0, 0);
+    --fifth-color : rgba(0,0,0,.7);
+    --error-color: #842029;
+    --success-color : #43A047;
+    --bg-error-color: #f8d7da;
+    --bg-success-color: #e6fffa;
+    --font-family : "Fugaz One", cursive;
+}
+
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color : var(--fourth-color);
+    color: var(--third-color);
+     
+}
+
+#explo-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/*========================== STYLISATION DU HEADER =============================*/
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-shadow: 0 0 5px var(--primary-color);
+    background-color: var(--fourth-color);
+    height: 6.5rem;
+}
+
+.header-title{
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background: url("images/logo.jpeg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform-style: preserve-3d;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+.title{
+    font-family: var(--font-family);
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+}
+
+.title span{
+    color: var(--primary-color);
+}
+
+.disconnect {
+    font-weight: 550;
+    padding: 1.2rem .7rem;
+    border-radius: .5rem;
+    background-color: var(--fourth-color);
+    color: var(--third-color);
+    border: 1.5px solid  var(--primary-color);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    font-size: 1.5rem;
+}
+
+.disconnect:hover{
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+    border-color:transparent  ;
+}
+
+/*============================================ STYLISATION DE LA BANNIERE ============================================*/
+.banner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 6.5rem;
+    background: url("images/troupeau2.jpeg");
+    background-repeat : no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0,0,0,.65);
+    background-blend-mode: darken;
+    overflow: hidden;
+}
+
+.texte{
+    font-size: 1.8rem;
+    width: 70%;
+    text-align: center;
+    margin-top: 2rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.intro{
+    font-size: 6.2rem;
+    font-family:  var(--font-family);
+}
+
+.btns{
+    width: 50%;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+}
+
+.learnMore-btn{
+    text-decoration: none;
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+    border: none;
+    border-radius: .3rem;
+    padding: 1.2rem;
+    transition: all .5s ease-in-out; 
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+
+.explore-btn{
+    background-color: var(--fourth-color);
+    border: 1.5px solid var(--third-color);
+    color: var(--third-color);
+    border-radius: .5rem;
+    padding: 1.2rem 1.7rem;
+    transition: all .5s ease; 
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+.learnMore-btn:hover{
+    background-color: var(--fourth-color);
+    border: 1.5px solid var(--third-color);
+    color: var(--third-color);
+}
+
+.explore-btn:hover{
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+}
+
+.down{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    font-size: 2rem;
+    color: var(--fourth-color);
+    background-color: var(--third-color);
+    padding: .6rem;
+    border-radius: 50%;
+    animation: bounce 2s infinite;
+}
+
+/*============================================ STYLISATION DE LA SECTION "LEARN MORE" ============================================*/
+
+#learnMore{
+    max-width: 1150px;
+    margin: 4rem auto 2rem;
+    line-height: 1.7;
+    scroll-margin-top: 8rem;
+}
+
+#learnMore h2{
+    font-family:  var(--font-family);
+    font-size: 4.2rem;
+    font-weight: 500;
+}
+
+.description{
+    padding-left: 2rem;
+    letter-spacing: .1rem;
+    text-align: justify;
+}
+
+.list-features{
+    display: flex;
+    gap: 2.2rem;
+    margin: 2rem;
+}
+
+.features {
+    width: 33%;
+    height: 300px;
+    position: relative;
+    border: 2px solid var(--third-color);
+    border-radius: 2.5rem;
+    overflow: hidden;
+}
+
+.features img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease;
+    z-index: 1;
+    opacity: .8;
+}
+
+.part{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--fourth-color);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .8);
+    font-weight: 500;
+    transform: translateX(-100%);
+    transition: transform .5s ease;
+    z-index: 2;
+}
+
+.part p{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.features:hover .part{
+    transform: translateX(0);
+}
+
+.features:hover img{
+    transform: scale(1.1);
+}
+
+.explore-link{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 2rem;
+    padding: 1.2rem 2rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    background-color: var(--fourth-color);
+    color: var(--third-color);
+    border: 1.5px solid  var(--third-color);
+    transition: all .5s ease-in-out; 
+    cursor: pointer;
+    
+}
+
+.explore-link:hover{
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+}
+
+footer{
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--fourth-color);
+    color: var(--third-color);
+    margin-top: 3rem;
+    border-top: 1px solid var(--third-color);
+}
+
+/*===================================== CLASSES ESSENTIELLES POUR LES JS ===============================*/
+
+.incorrect {
+    color: var(--error-color);
+    background-color: var(--bg-error-color);
+}
+
+
+.correct {
+    color: var(--success-color);
+    background-color: var(--bg-success-color);
+}
+
+.correct::before{
+    content: "\2714";
+    display: block;
+    position: absolute;
+    left: .5rem;
+}
+
+.show{
+    display: flex !important;
+}
+
+.hide{
+    display: none !important;
+}
+
+/* ANIMATIONS POUR LA BANNIERE */
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1139px) {
+    
+    .intro{
+        font-size: 5rem;
+    }
+
+    #learnMore{
+        width: 90%;
+    }
+
+    #learnMore h2{
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 927px){
+    
+    .intro{
+        font-size: 3.7rem;
+    }
+
+    #learnMore{
+        width: 90%;
+    }
+
+    #learnMore h2{
+        font-size: 2.8rem;
+    }
+
+    #learnMore p{
+        letter-spacing: normal;
+        padding: auto .5rem;
+    }
+
+    .list-features{
+        gap: 1.5rem;
+    }
+    .features{
+        height: 270px;
+        
+    }
+
+    .btns{
+        gap: 1rem;
+        width: auto;
+    }
+}
+
+@media (max-width :692px){
+
+    .header{
+        height: 5.5rem;
+    }
+
+    .title{
+        font-size: 1.6rem;
+    }
+
+    .disconnect{
+        padding: .8rem .7rem;
+        font-size: 1.3rem;
+    }
+    .intro{
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .texte{
+        font-size: 1.5rem;
+    }
+
+    .btns{
+        gap: 1rem;
+        width: auto;
+    }
+
+    .list-features{
+        display: block;
+        width: 90%;
+        gap: 0;
+        margin-inline: auto;
+    }
+
+    .features{
+        width: 100%;
+        margin-top: 3rem;
+        border-radius: 1.3rem;
+    }
+
+    .part p {
+        font-size: 1.3rem;
+    }
+
+    .explore-link{
+        font-size: 1.4rem;
+        align-items: center;
+        text-align: center;
+    }
+}

@@ -17,6 +17,7 @@
     --success-color : #43A047;
     --bg-error-color: #f8d7da;
     --bg-success-color: #e6fffa;
+    --font-family : "Fugaz One", cursive;
 }
 
 
@@ -33,11 +34,7 @@ body{
      
 }
 
-#explo-container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
+
 
 /*========================== STYLISATION DU HEADER =============================*/
 .header{
@@ -71,8 +68,8 @@ body{
 
 
 .title{
-    font-family: "Berkshire Swash", cursive;
-    font-size: 2rem;
+    font-family: var(--font-family);
+    font-size: 2.2rem;
     font-weight: bold;
     letter-spacing: .2rem;
 }
@@ -81,6 +78,48 @@ body{
     color: var(--primary-color);
 }
 
+.header-btn{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+}
+
+.fa-bars{
+    font-size: 2.3rem;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 2rem;
+    border: 1px solid var(--primary-color);
+    display: none;
+}
+
+.menu li{
+    list-style: none;
+    padding: 1rem 2rem;
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+    cursor: pointer;
+    
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--fourth-color);
+}
+
+.menu li:hover{
+    background-color: var(--primary-color);
+}
+
+.show{
+    display: block !important;
+}
 .disconnect {
     font-weight: 550;
     padding: 1.2rem .7rem;
@@ -90,6 +129,7 @@ body{
     border: 1.5px solid  var(--primary-color);
     cursor: pointer;
     transition: all .5s ease-in-out;
+    font-size: 1.5rem;
 }
 
 .disconnect:hover{
@@ -98,147 +138,112 @@ body{
     border-color:transparent  ;
 }
 
-/*============================================ STYLISATION DE LA BANNIERE ============================================*/
-.banner{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    padding-top: 6.5rem;
-    background: url("images/troupeau2.jpeg");
-    background-repeat : no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0,0,0,.65);
-    background-blend-mode: darken;
+/*======================================== STYLISATION DE LA PARTIE EXPLORATION ===============================*/
 
+#exploration{
+    padding-top:8.5rem;
+    max-width: 1050px;
+    margin-inline: auto;
+    min-height: 100vh;
+    scroll-margin-top: 7rem;
 }
 
-.texte{
-    font-size: 1.8rem;
-    width: 70%;
+.title-explorer{
+    font-family: var(--font-family);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.title-explorer span, span{
+    color: var(--primary-color);
+}
+
+h2{
     text-align: center;
-    margin-top: 2rem;
-    line-height: 1.5;
+}
+
+#exploration p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.animals{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.animal-card{
+    position: relative;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.animal-card img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: transform .5s ease;
+}
+
+.animal-card h2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255, .7);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    transition: transform .5s ease;
+    transform: translateX(-100%);
+}
+
+.animal-card button{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+    padding: 1.2rem 1.5rem;
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+    border-color:transparent  ;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
-.intro{
-    font-size: 6.2rem;
-    font-family: "Berkshire Swash", cursive;
-}
-
-.btns{
-    width: 50%;
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-
-}
-
-.learnMore-btn{
-    background-color: var(--third-color);
-    color: var(--fourth-color);
-    border: none;
-    border-radius: .3rem;
-    padding: 1.2rem;
-    transition: all .5s ease-in-out; 
-    cursor: pointer;
-}
-
-
-.explore-btn{
+.animal-card button:hover{
     background-color: var(--fourth-color);
-    border: 1.5px solid var(--third-color);
     color: var(--third-color);
-    border-radius: .5rem;
-    padding: 1.2rem 1.7rem;
-    transition: all .5s ease-in-out; 
-    cursor: pointer;
+    border: 1.5px solid  var(--primary-color);
+}
+.animal-card:hover h2{
+    transform: translateX(0);
 }
 
-.learnMore-btn:hover{
-    background-color: var(--fourth-color);
-    border: 1.5px solid var(--third-color);
-    color: var(--third-color);
+.animal-card:hover img{
+    transform: scale(1.2);
 }
 
-.explore-btn:hover{
-    background-color: var(--third-color);
-    color: var(--fourth-color);
-    border: none;
+.description {
+    border: 1px solid red;
+    margin: 1.5rem auto;
+    animation: appaer 1s ease;
 }
 
-.down{
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    font-size: 2rem;
-    color: var(--fourth-color);
-    background-color: var(--third-color);
-    padding: .6rem;
-    border-radius: 50%;
-    animation: bounce 2s infinite;
-}
-
-/*===================================== CLASSES ESSENTIELLES POUR LES JS ===============================*/
-
-.incorrect {
-    color: var(--error-color);
-    background-color: var(--bg-error-color);
-}
-
-
-.correct {
-    color: var(--success-color);
-    background-color: var(--bg-success-color);
-}
-
-.correct::before{
-    content: "\2714";
-    display: block;
-    position: absolute;
-    left: .5rem;
-}
-
-.show{
-    display: flex !important;
-}
-
-.hide{
-    display: none !important;
-}
-
-/* ANIMATIONS POUR LA BANNIERE */
-
-@keyframes changeBgUrl {
-    
+@keyframes appaer {
     0%{
-        background: url("images/troupeau2.jpeg");
-    }
-
-    50%{
-        background: url("images/troupeau3.jpeg");
-    }
-
+       transform:  translateY(-25px)
+    }   
     100%{
-        background: url("images/troupeau1.jpeg");
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
+        transform: translateY(0)
     }
 }
