@@ -54,7 +54,7 @@ body{
 }
 
 .logo {
-    background: url("images/logo.jpeg") no-repeat;
+    background: url("../images/logo.jpeg") no-repeat;
     background-size: cover;
     background-position: center;
     transform-style: preserve-3d;
