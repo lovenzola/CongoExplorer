@@ -85,12 +85,12 @@ CongoExplorer/
 
 ---
 
-## 🚀 Installation et utilisation
+## Installation et utilisation
 
 1. Cloner le projet :
 
 ```bash
-git clone https://github.com/ton-repo/congo-explorer.git
+git clone https://github.com/lovenzola/CongoExplorer.git
 ```
 
 2. Ouvrir le fichier :
@@ -107,7 +107,7 @@ index.html
 
 ---
 
-## 📸 Aperçu
+## Aperçu
 
 Le projet propose une immersion visuelle basée sur :
 
@@ -117,7 +117,7 @@ Le projet propose une immersion visuelle basée sur :
 
 ---
 
-## 💡 Améliorations futures
+##  Améliorations futures
 
 * Ajout d’une base de données
 * Sauvegarde des scores utilisateurs
@@ -135,4 +135,4 @@ Le projet propose une immersion visuelle basée sur :
 
 ## 📜 Licence
 
-Projet académique – utilisation éducative uniquement.
+Projet personnel – utilisation éducative uniquement.
