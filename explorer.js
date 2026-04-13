@@ -23,6 +23,40 @@ menuBurger.addEventListener('click', (e)=>{
 
 })
 
-/* ================= Retour à la page d'accueil ================== */
+/* ================= Deconnexion ================ */
 
+const btnDisconnect = document.querySelector('.disconnect');
+
+btnDisconnect.addEventListener('click', () => {
+    setTimeout(() => {
+        window.location.href = 'index.html#hero'; 
+    }, 1000);
+   
+});
+
+
+// =================== AFFICHAGE DE DESCRIPTIONS DES ANIMAUX ==================
+
+const btnCards = document.querySelectorAll('.btn-card')
+const descriptions = document.querySelectorAll('.description')
+
+btnCards.forEach((btn, index) =>{
+    btn.addEventListener('click', (e)=>{
+        e.preventDefault()
+        
+        descriptions.forEach(d => d.classList.remove('show'))
+        descriptions[index].classList.add('show')
+
+    })
+})
+
+//======================= CACHAGE DE DESCRIPTIONS DES ANIMAUX ===================
+
+const btnDescribes = document.querySelectorAll('.btn-describe')
+btnDescribes.forEach((btn, index)=>{
+    btn.addEventListener(('click'), (e)=>{
+        e.preventDefault()
+        descriptions[index].classList.remove('show')
+    })
+} )
 

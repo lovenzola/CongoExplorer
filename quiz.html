@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CongoExplorer -- Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <script src="quiz.js" type="module" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <header class="header">
+            <div class="header-title">
+                <div class="logo">
+                </div>
+
+                <p class="title">Congo<span>Explorer</span></p>
+            </div>
+
+            <div class="header-btn">
+                <button class="disconnect">Se deconnecter</button>
+                <i class="fas fa-bars"></i>
+
+                <ul class="menu">
+                    <li><a href="explorer.html">Exploration</a></li>
+                    <li class="home-btn"><a href="apropos.html">Retour à l'accueil</a></li>
+                </ul>
+            </div>
+            
+    </header>
+
+    <section id="main">
+        <div class="quiz">
+            <div class="rules">
+                <h2>A SAVOIR</h2>
+                <li>Vous avez 5 minutes pour passer le test</li>
+                <li>Vous avez 10 questions à choix multiples</li>
+                <li>Référez vous à ce que vous avez lu dans l'exploration</li>
+                <li class="rule">Êtes-vous prêt?</li>
+
+                <div class="btn-rule">
+                    <button  class="yes">OUI</button>
+                    <button class="no">NON</button>
+                </div>
+                
+                <p class="info">Pas de souci! Vous pouvez revenir plus tard ou Explorer</p>
+            </div>
+
+            <div class="main-quiz">
+                <div class="timer">
+                    <span class="min"></span>:
+                    <span class="sec"></span>
+                </div>
+
+                <div class="questionnaire">
+                    <h3 class="quest">Question <span class="number"></span></h3>
+                    <div class="question"></div>
+                    <div class="choices"></div>
+                    <button class="precedent"><i class="fa-solid fa-arrow-left"></i> Précédent </button>
+                    <button class="next">Suivant <i class="fa-solid fa-arrow-right"></i> </button>
+                    <button class="submit">Soumettre</button>
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+
+
+    <footer>
+        <p>&copy; 2026 CongoExplorer. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

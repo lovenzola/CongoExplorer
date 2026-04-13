@@ -20,13 +20,14 @@
     --font-family : "Fugaz One", cursive;
 }
 
-
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
 body{
+    height: 100vh;
+    color: var(--fourth-color);
     font-size: 1.4rem;
     font-family: 'Montserrat', sans-serif;
     background-color : var(--fourth-color);
@@ -114,13 +115,6 @@ body{
     background-color: var(--primary-color);
 }
 
-.hide{
-    display: none !important; 
-}
-
-.show{
-    display: block !important;
-}
 .disconnect {
     font-weight: 550;
     padding: 1.2rem .7rem;
@@ -138,156 +132,147 @@ body{
     color: var(--fourth-color);
     border-color:transparent  ;
 }
-
-/*======================================== STYLISATION DE LA PARTIE EXPLORATION ===============================*/
-
-#exploration{
+/*========================== STYLISATION DU MAIN =========================================*/
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     padding-top:8.5rem;
     max-width: 82%;
     margin-inline: auto;
-    min-height: 100vh;
 }
-
-.title-explorer{
+.quiz{
+    background-color: var(--third-color);
+    border-radius: 1rem;
+    color: var(--fourth-color);
+    padding: 2rem 0;
+}
+.rules{
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: auto;
+    animation: appaer 1s ease;
+}
+.rules h2{
     font-family: var(--font-family);
-    font-size: 3rem;
-    margin-bottom: 2rem;
-}
-
-.title-explorer span, span{
-    color: var(--primary-color);
-}
-
-h2{
     text-align: center;
 }
 
-#exploration p {
-    text-align: justify;
-    line-height: 1.6;
+.rules li {
+    padding: 1rem 0;
+    margin-left: 2.5rem;
 }
 
-#animals{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem;
-    margin-top: 5rem;
-    width: 100%;
-    scroll-margin-top: 2rem;
-    
+.rule{
+    list-style: none;
+    font-weight: bold;
 }
 
-.animal-card{
-    position: relative;
-    height: 320px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: .5rem;
-}
-
-.animal-card img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    transition: transform .5s ease;
-}
-
-.animal-card h2{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255,255,255, .7);
-    z-index: 2;
+.btn-rule{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.3rem;
-    transition: transform .5s ease;
-    transform: translateX(-100%);
+    gap: 1rem;
 }
 
-.animal-card button{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: 3;
-    padding: 1.2rem 1.5rem;
-    background-color: var(--third-color);
-    color: var(--fourth-color);
-    border-color:transparent  ;
+.yes, .no{
+    padding: 1rem;
+    font-family: var(--font-family);
+    border-radius: .5rem;
     cursor: pointer;
-    transition: all .5s ease-in-out;
-    font-size: 1.5rem;
+}
+
+.yes{
+   background-color: var(--success-color); 
+   border: none;
+   color: var(--third-color);
+}
+
+.no{
+    background-color: var(--error-color);
+    color: var(--third-color);
+    border: none;
+}
+
+.info{
+    color: var(--success-color);
+    font-weight: bold;
+    margin-top: 1rem;
+    opacity: 0;
+}
+
+.apparition{
+    animation: apparition 4s ease;
+}
+
+/*============================ STYLISATION DU MAIN QUIZ =====================================*/
+.main-quiz{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin-inline: auto;
+    animation: appaer 1s ease;
+}
+
+
+.timer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 1.5px solid var(--fourth-color);
+    background-color: var(--bg-error-color);
+    border-radius: .5rem;
+    font-family: var(--font-family);
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    color: var(--error-color);
+}
+
+/*============================ STYLISATION DES QUESTIONS ET RÉPONSES ===============================*/
+.quest{
+    margin: 1rem;
+}
+
+.question{
     font-weight: 500;
 }
-
-.animal-card button:hover, .animal-card button:focus{
-    background-color: var(--fourth-color);
-    color: var(--third-color);
-    border: 1.5px solid  var(--primary-color);
-}
-.animal-card:hover h2{
-    transform: translateX(0);
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
 }
 
-.animal-card:hover img{
-    transform: scale(1.2);
+.choices input{
+    margin-right: 1rem;
+    accent-color: var(--error-color);
 }
 
-.description {
-    margin: 1.5rem auto;
-    animation: appaer 2s ease;
-    padding: 1.2rem;
-    border: 1.5px solid var(--third-color);
-    border-radius: .7rem;
-    display: none;
-}
-
-.btn-describe{
-    padding: 1rem 1.2rem;
-    margin-top: 1rem;
-    border: 1.5px solid transparent;
-}
-
-.btn-describe:hover, .btn-describe:focus{
-    background-color: var(--fourth-color);
-    border-color: var(--third-color);
-    color: var(--third-color);
-}
-
-.btn-quiz {
-    width: 100%;
-    margin-top: 2.8rem;
-    padding: 1.5rem 0;
-    border-radius: 1.5rem;
-    background-color: var(--fourth-color);
-    border: 1.7px solid var(--third-color);
-    color: var(--third-color);
-    font-weight: bold;
-    font-size: 1.7rem;
+.precedent, .next, .submit{
+    padding: 1rem;
+    margin : 1rem 1rem 0 ;
+    border: 1px solid transparent;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
+
 }
 
-.btn-quiz:hover{
-    background-color: var(--third-color);
-    color: var(--fourth-color);
-    border-color: transparent ;
-}
-/*======================================================================*/
-
-#quiz{
-   position: absolute; 
-   background-color: rgba(255,255,255, .7);
-   left: 50%;
-   top: 50%;
-   transform: translateX(-50%);
-   height: 100%;
-   width: 82%;
-   z-index: 1001; 
+.precedent{
+    background-color: var(--bg-error-color);
 }
 
+.submit{
+    background-color: red;
+}
+
+.next{
+    background-color: var(--success-color);
+}
 
 
 /*=========================== STYLISATION DU FOOTER ======================================*/
@@ -301,6 +286,35 @@ footer{
     border-top: 1px solid var(--third-color);
 }
 
+/*========================== CLASSES ESSENTIELLES =============================*/
+.incorrect {
+    color: var(--error-color);
+    background-color: var(--bg-error-color);
+}
+
+.correct {
+    color: var(--success-color);
+    background-color: var(--bg-success-color);
+}
+
+.correct::before{
+    content: "\2714";
+    display: block;
+    position: absolute;
+    left: .5rem;
+}
+.hide{
+    display: none!important;
+}
+.show{
+    display: block !important;
+}
+
+.showQuiz{
+    display: flex;
+}
+
+/*==============================================================================*/
 
 @keyframes appaer {
     0%{
@@ -311,20 +325,42 @@ footer{
     }
 }
 
-
-@media (max-width: 850px){
-
-    #animals{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 2rem;
+@keyframes apparition {
+    
+    0% {
+        transform: translateY(-25px);
+        opacity: .5;
     }
+    50%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(25px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 763px){
+
+    body{
+        font-size: 1.3rem;
+    }
+
+   .timer{
+        padding: 1rem;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+   }
+
 }
 
 @media (max-width: 470px){
 
     .header-title{
-        display: block;   
+        display: block;
+        
     }
     .title{
         font-size: 1.4rem;
@@ -338,13 +374,5 @@ footer{
         padding: .5rem;
         font-size: 1.2rem;
     }
-    #animals{
-        display: block;
-        
-    }
-
-    .animal-card{
-        margin-bottom: 1.5rem;
-        border-radius: 1rem;
-    }
 }
+
